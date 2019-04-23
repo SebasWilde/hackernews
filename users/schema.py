@@ -56,7 +56,7 @@ class CreateUser(graphene.Mutation):
             if age:
                 profile.age = age
             if sex:
-                if sex != M or sex != W:
+                if sex != M and sex != W:
                     raise GraphQLError('Sex must be M or W')
                 profile.sex = sex
             profile.save()
